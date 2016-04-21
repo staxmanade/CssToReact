@@ -1,5 +1,10 @@
 import cssParser from 'css';
 
+//
+// Transform implementation or originally thanks to
+// https://github.com/raphamorim/native-css
+//
+
 function transformRules(self, rules, result) {
     rules.forEach(function (rule) {
         var obj = {};
@@ -41,18 +46,22 @@ export function transform (inputCssText) {
     throw new Error('missing css text to transform');
   }
 
-  var useFoo = false;
+  // If the input "css" doesn't wrap it with a css class (raw styles) 
+  // we need to wrap it with a style so the css parser doesn't choke.
+  var bootstrapWithCssClass = false;
   if(inputCssText.indexOf("{") === -1) {
-    useFoo = true;
-    inputCssText = `.foo { ${inputCssText} }`;
+    bootstrapWithCssClass = true;
+    inputCssText = `.bootstrapWithCssClass { ${inputCssText} }`;
   }
 
   var css = cssParser.parse(inputCssText);
   var result = {};
   transformRules(this, css.stylesheet.rules, result);
 
-  if(useFoo) {
-    result = result.foo;
+  // Don't expose the implementation detail of our wrapped css class.
+  if(bootstrapWithCssClass) {
+    result = result.bootstrapWithCssClass;
   }
+
   return result;
 }
