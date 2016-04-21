@@ -94,10 +94,11 @@ export default class App extends React.Component {
     var outputText = this.state.error || this.state.outputText;
 
     return (
-      <div>
+      <div style={{"text-align":"center"}}>
         <Input ref='inputCss' placeholder="Type or paste CSS here..." onChange={this.inputTextUpdate} value={inputText} />
         <textarea ref='outputCss' cols="40" rows="20" style={outputCssStyle} value={outputText} />
-        <input ref="useNewline" type="checkbox" onChange={this.update} /> Format
+        <br />
+        <input style={{"margin-left": "266px"}} ref="useNewline" type="checkbox" onChange={this.update} /> Format
       </div>
     );
   }
