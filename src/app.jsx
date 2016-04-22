@@ -3,19 +3,20 @@ import ReactDOM from 'react-dom';
 
 import {transform} from './transform.js';
 
-var Input = React.createClass({
-  render: function() {
-    return <textarea cols="40" rows="20" placeholder="this.props.placeholder" ref="root" {...this.props} value={undefined} />;
-  },
-  componentDidUpdate: function(prevProps) {
+class Input extends React.Component {
+  componentDidUpdate(prevProps) {
     var node = ReactDOM.findDOMNode(this);
     var oldLength = node.value.length;
     var oldIdx = node.selectionStart;
     node.value = this.props.value;
     var newIdx = Math.max(0, node.value.length - oldLength + oldIdx);
     node.selectionStart = node.selectionEnd = newIdx;
-  },
-});
+  }
+
+  render() {
+    return <textarea cols="40" rows="20" {...this.props} value={undefined} />;
+  }
+}
 
 var sampleCSS = `
       width: 5vh;
