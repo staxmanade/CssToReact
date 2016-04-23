@@ -11,7 +11,8 @@ System.config({
     }
   },
   map: {
-    'react': 'npm:react@15',
+    "react": "https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.min.js",
+    "react-dom": "https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.min.js",
     'css': 'npm:css',
     'amdefine': 'npm:amdefine',
     'source-map-url': 'npm:source-map-url',
