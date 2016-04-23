@@ -6,8 +6,22 @@
 System.config({
   transpiler: 'babel',
   packages: {
-    './': {
-      defaultExtension: false
+    'app': {
+      "main": "app.jsx",
+      "format": "esm",
+      "meta": {
+        "*.js": {
+          "loader": "plugin-babel",
+          "babelOptions": {
+            "plugins": ["babel-plugin-transform-react-jsx"]
+          }
+        },
+        "*.jsx": {
+          "babelOptions": {
+            "plugins": ["babel-plugin-transform-react-jsx"]
+          }
+        }
+      }
     }
   },
   map: {
