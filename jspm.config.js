@@ -1,6 +1,5 @@
 SystemJS.config({
   transpiler: "plugin-babel",
-  production: true,
   packages: {
     "app": {
       "main": "app.jsx",

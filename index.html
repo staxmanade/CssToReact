@@ -118,7 +118,8 @@
             SystemJS.import('app');
         }
         if (System.production) {
-            System.import('./build.js').then(startApp);
+            // System.import('../build.js').then(startApp);
+            startApp();
         } else {
             startApp();
         }
