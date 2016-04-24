@@ -1,4 +1,7 @@
 {
+  "scripts": {
+      "build": "jspm bundle app - react - react-dom build.js -m"
+  },
   "jspm": {
     "name": "app",
     "main": "app.js",
