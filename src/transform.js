@@ -17,7 +17,8 @@ function transformRules(self, rules, result) {
         } else if (rule.type === 'rule') {
             rule.declarations.forEach(function (declaration) {
                 if (declaration.type === 'declaration') {
-                    obj[declaration.property] = declaration.value;
+                    var cleanProperty = cleanPropertyName(declaration.property);
+                    obj[cleanProperty] = declaration.value;
                 }
             });
             rule.selectors.forEach(function (selector) {
@@ -26,6 +27,14 @@ function transformRules(self, rules, result) {
             });
         }
     });
+}
+
+var cleanPropertyName = function(name) {
+
+    // turn things like 'align-items' into 'alignItems'
+    name = name.replace(/(-.)/g, function(v) { return v[1].toUpperCase(); })
+
+    return name;
 }
 
 var mediaNameGenerator = function (name) {
@@ -37,6 +46,7 @@ var nameGenerator = function (name) {
     name = name.replace(/[^a-zA-Z0-9]/g, '_');
     name = name.replace(/^_+/g, '');
     name = name.replace(/_+$/g, '');
+
     return name;
 };
 
@@ -46,7 +56,7 @@ export function transform (inputCssText) {
     throw new Error('missing css text to transform');
   }
 
-  // If the input "css" doesn't wrap it with a css class (raw styles) 
+  // If the input "css" doesn't wrap it with a css class (raw styles)
   // we need to wrap it with a style so the css parser doesn't choke.
   var bootstrapWithCssClass = false;
   if(inputCssText.indexOf("{") === -1) {
