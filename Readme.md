@@ -1,5 +1,4 @@
 
-<img align="right" src="http://staxmanade.com/CssToReact/images/CssToReact-logo.svg">
 
 # What is it?
 
