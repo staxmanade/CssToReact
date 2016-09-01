@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "build": "jspm bundle app - react - react-dom build.js -m"
+    "dev": "jspm install && npm run build && npm start",
+    "build": "jspm bundle app - react - react-dom build.js -m",
+    "start": "nws -o"
   },
   "jspm": {
     "name": "app",
@@ -15,7 +17,7 @@
     "devDependencies": {
       "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@^6.7.5",
       "net": "github:jspm/nodelibs-net@^0.2.0-alpha",
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.9",
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.13",
       "tty": "github:jspm/nodelibs-tty@^0.2.0-alpha"
     },
     "peerDependencies": {
@@ -106,6 +108,7 @@
     }
   },
   "devDependencies": {
-    "jspm": "^0.17.0-beta.28"
+    "jspm": "^0.17.0-beta.28",
+    "nws": "^1.1.1"
   }
 }

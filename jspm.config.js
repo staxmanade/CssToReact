@@ -8,7 +8,7 @@ SystemJS.config({
     "map": {
       "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@6.7.5",
       "net": "github:jspm/nodelibs-net@0.2.0-alpha",
-      "plugin-babel": "npm:systemjs-plugin-babel@0.0.9",
+      "plugin-babel": "npm:systemjs-plugin-babel@0.0.13",
       "tty": "github:jspm/nodelibs-tty@0.2.0-alpha"
     },
     "packages": {
