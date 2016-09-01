@@ -20,9 +20,6 @@ So one night I was searching the React interwebs thinking someone __had__ to hav
 # Hack on this repo
 
 ```
-npm install -g jspm@beta nws
 npm install
-jspm install
-npm run build
-nws -o
+npm run dev
 ```
