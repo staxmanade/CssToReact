@@ -377,3 +377,11 @@ footer a:hover {
         display: none;
     }
 }
+
+
+.amazonAffilliate {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-top: 20px;
+}
