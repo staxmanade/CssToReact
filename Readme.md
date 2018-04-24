@@ -1,25 +1,44 @@
+# README #
 
+### TL;DR ###
 
-# What is it?
+(WIP) CSS <-> React (style) here: https://htbkoo.github.io/CssToAndFromReact/ 
 
-Allows you to paste plain CSS into a &lt;textarea&gt;, it will automatically transform that into something you can copy right into a React component inline style.
+### What is this repository for? ###
 
-# See it in action: [CssToReact](http://staxmanade.com/CssToReact/)
+* This repo is a fork of [staxmanade/CssToReact](https://github.com/staxmanade/CssToReact)
+* The idea is great but I believe transformation from React Style back to CSS would also be useful
+* So this repo is an attempt to add bi-directional transformation between React Styles <-> CSS
+* In short these changes are added on top of the original repo
+    - [x] updated .gitignore (because IntelliJ IDEA is used so some of the config files should be ignored as well)
+    - [ ] (Just personal preference) migrated yarn / npm
+    - [ ] (Just personal preference) migrated to TypeScript
+    - [ ] Added automated test coverage
+    - [ ] Added functionality to transform from React back to CSS
+* An instance would be deployed to GitHub Page: https://htbkoo.github.io/CssToAndFromReact/
 
-# The story behind it...
+### How do I get set up? ###
 
-So you're working on a React app. It's up and running in you're favorite browser but you notice an issue with some layout. You think, ok, this should be easy to fix. You open up the developer tools, hack on some CSS within the browser till you get it looking just the way you want it to. Maybe it's several CSS properties you added or tweaked so you copy each of them into the clipboard so you can transfer them back to your application.
+(WIP)
+* Summary of set up: "npm install" to download dependencies and the project is good to go.
+* Configuration: N/A 
+* Dependencies: Listed at package.json
+* Database configuration: N/A
+* How to run tests: "npm run test"
+    * run unit tests only: "npm run test:unit"
+* Deployment instructions: N/A
+* How to start server: "npm run start"
 
-Then you realize, these styles aren't coming from a CSS style sheet, they're in-line styles right in you're React component.
+### Contribution guidelines ###
 
-Now you're like, FINE, I'll manually translate this to React-style-inline-CSS. This is fine if you do it once, but maybe you missed removing a dash and mis-cased a letter or maybe you forgot a comma, or left a semicolon in the converted style translation… Never happened to you? Oh, you are so amazing if only I was as cool as you. For myself and probably another 1 or 2 of you out there I hacked together a little tool that automates this translation. Maybe this should be a plugin to my text editor where I can right click and say "Paste as React Style" instead, but for now it's a single simple little web page that will automate the translation for you.
+* Writing tests: N/A
+* Code review: N/A
+* Other guidelines: N/A
 
-So one night I was searching the React interwebs thinking someone __had__ to have build this tool already. Unfortunately I didn't find it anywhere but I DID find this handy little tool [raphamorim/native-css](https://github.com/raphamorim/native-css) which is a CLI version of what I wanted in the browser. So thanks to the quick bootstrap based on that tool, I was able to put this little project together in just a short evening...
+### Who do I talk to? ###
 
+* Repo owner or admin: me ([htbkoo](https://bitbucket.org/htbkoo/))
+* Other community or team contact: N/A
 
-# Hack on this repo
-
-```
-npm install
-npm run dev
-```
+# Acknowledgement
+This repo is a fork of [staxmanade/CssToReact](https://github.com/staxmanade/CssToReact), so definitely kudos to [staxmanade](https://github.com/staxmanade) 
