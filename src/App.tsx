@@ -3,9 +3,16 @@ import ReactDOM from 'react-dom';
 
 import {transform} from './transform.js';
 
-class Input extends React.Component {
+type InputProps = {
+    value: string,
+    placeholder: string,
+    onChange: (event) => void
+};
+type InputState = {};
+
+class Input extends React.Component<InputProps, InputState> {
     componentDidUpdate(prevProps) {
-        var node = ReactDOM.findDOMNode(this);
+        var node = ReactDOM.findDOMNode(this) as HTMLInputElement; // reference: https://github.com/Microsoft/TypeScript/issues/10453#issuecomment-301263769
         var oldLength = node.value.length;
         var oldIdx = node.selectionStart;
         node.value = this.props.value;
@@ -14,7 +21,7 @@ class Input extends React.Component {
     }
 
     render() {
-        return <textarea cols="40" rows="20" {...this.props} value={undefined}/>;
+        return <textarea cols={40} rows={20} {...this.props} value={undefined}/>;
     }
 }
 
@@ -34,7 +41,15 @@ var sampleCSS = `
 
 var initialStarterText = "";
 
-export default class App extends React.Component {
+type AppProps = {};
+type AppState = {
+    inputText: string,
+    outputText: string,
+    error?: string,
+    shouldFormat: boolean
+};
+
+export default class App extends React.Component<AppProps, AppState> {
 
     constructor(props) {
         super(props);
@@ -42,7 +57,9 @@ export default class App extends React.Component {
         this.inputTextUpdate = this.inputTextUpdate.bind(this);
 
         this.state = {
-            inputText: initialStarterText
+            inputText: initialStarterText,
+            outputText: "",
+            shouldFormat: false
         }
     }
 
@@ -59,7 +76,7 @@ export default class App extends React.Component {
         });
     }
 
-    update() {
+    update(shouldFormat = this.state.shouldFormat) {
 
         console.log('update', arguments);
 
@@ -74,10 +91,11 @@ export default class App extends React.Component {
         try {
             var transformed = transform(this.state.inputText);
 
-            var result = JSON.stringify(transformed, null, this.refs.useNewline.checked ? 2 : 0);
+            var result = JSON.stringify(transformed, null, shouldFormat ? 2 : 0);
             this.setState({
                 outputText: result,
-                error: null
+                error: null,
+                shouldFormat
             });
         } catch (ex) {
             this.setState({
@@ -98,9 +116,15 @@ export default class App extends React.Component {
             <div style={{"textAlign": "center"}}>
                 <Input ref='inputCss' placeholder="Type or paste CSS here..." onChange={this.inputTextUpdate}
                        value={inputText}/>
-                <textarea ref='outputCss' cols="40" rows="20" style={outputCssStyle} value={outputText}/>
+                <textarea ref='outputCss' cols={40} rows={20} style={outputCssStyle} value={outputText}/>
                 <br/>
-                <input style={{"marginLeft": "266px"}} ref="useNewline" type="checkbox" onChange={this.update}/> Format
+                <input style={{"marginLeft": "266px"}} ref="useNewline" checked={this.state.shouldFormat}
+                       type="checkbox" onChange={e => {
+                    // e.preventDefault();
+                    console.log(`isChecked: ${e.target.checked}`);
+                    // this.setState({shouldFormat: e.target.checked});
+                    this.update(e.target.checked);
+                }}/> Format
             </div>
         );
     }
