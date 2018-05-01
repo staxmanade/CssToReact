@@ -4,7 +4,7 @@
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "jspmdev": "jspm install && npm run build && npm start",
+    "jspm:dev": "jspm install && npm run build && npm start",
     "jspm:build": "jspm bundle app - react - react-dom build.js -m",
     "jspm:start": "nws -o"
   },
