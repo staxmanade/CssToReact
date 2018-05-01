@@ -10,6 +10,7 @@
     "ghpages:rename": "node ./bin/rename -s build -d docs"
   },
   "dependencies": {
+    "css": "^2.2.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts-ts": "2.15.1"
