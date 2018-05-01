@@ -6,7 +6,7 @@
     "eject": "react-scripts-ts eject",
     "ghpages:publish": "yarn run build && yarn run ghpages:clean && yarn run ghpages:rename",
     "ghpages:clean": "rimraf ./docs",
-    "ghpages:rename": "node ./bin/rename"
+    "ghpages:rename": "node ./bin/rename -s build -d docs"
   },
   "dependencies": {
     "react": "^16.3.2",
