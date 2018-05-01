@@ -135,6 +135,8 @@
 
         <aside style="margin-bottom: 20px;">
 
+            <!-- provided, should suppress check -->
+            <!--suppress JSUnresolvedLibraryURL -->
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <!-- CssToReact1 -->
             <ins class="adsbygoogle"
@@ -159,20 +161,6 @@
 
     </div>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.31/system.js"></script>
-<script src="../jspm.browser.js"></script>
-<script src="../jspm.config.js"></script>
-<script>
-    function startApp() {
-        SystemJS.import('app');
-    }
-    if (System.production) {
-        System.import('./build.js').then(startApp);
-    } else {
-        startApp();
-    }
-</script>
 
 <!-- provided, should skip comma expression check -->
 <!--suppress CommaExpressionJS -->
