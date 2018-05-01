@@ -1,8 +1,12 @@
 {
   "scripts": {
-    "dev": "jspm install && npm run build && npm start",
-    "build": "jspm bundle app - react - react-dom build.js -m",
-    "start": "nws -o"
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject",
+    "jspmdev": "jspm install && npm run build && npm start",
+    "jspm:build": "jspm bundle app - react - react-dom build.js -m",
+    "jspm:start": "nws -o"
   },
   "jspm": {
     "name": "app",
@@ -107,7 +111,17 @@
       }
     }
   },
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts-ts": "2.15.1"
+  },
   "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^8.10.11",
+    "@types/react": "^16.3.13",
+    "@types/react-dom": "^16.0.5",
+    "typescript": "^2.8.3",
     "jspm": "^0.17.0-beta.28",
     "nws": "^1.1.1"
   }
