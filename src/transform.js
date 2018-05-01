@@ -32,10 +32,10 @@ function transformRules(self, rules, result) {
 var cleanPropertyName = function(name) {
 
     // turn things like 'align-items' into 'alignItems'
-    name = name.replace(/(-.)/g, function(v) { return v[1].toUpperCase(); })
+    name = name.replace(/(-.)/g, function(v) { return v[1].toUpperCase(); });
 
     return name;
-}
+};
 
 var mediaNameGenerator = function (name) {
     return '@media ' + name;
