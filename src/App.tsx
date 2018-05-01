@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {transform} from './transform.js';
+import {transform} from './transform';
 
 type InputProps = {
     value: string,
@@ -24,20 +24,6 @@ class Input extends React.Component<InputProps, InputState> {
         return <textarea cols={40} rows={20} {...this.props} value={undefined}/>;
     }
 }
-
-var sampleCSS = `
-      width: 5vh;
-      height: 5vh;
-      border-radius: 50%;
-      background: #dfdfc2;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%);
-      -webkit-animation: leftEyeAnimation 3s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
-              animation: leftEyeAnimation 3s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
-`;
 
 var initialStarterText = "";
 
