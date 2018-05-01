@@ -3,7 +3,10 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "ghpages:publish": "yarn run build && yarn run ghpages:clean && yarn run ghpages:rename",
+    "ghpages:clean": "rimraf ./docs",
+    "ghpages:rename": "node ./bin/rename"
   },
   "dependencies": {
     "react": "^16.3.2",
