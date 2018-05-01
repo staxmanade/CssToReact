@@ -26,7 +26,8 @@
     <title>Convert Css to and from React Style JSON by htbkoo</title>
 
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="Description" CONTENT="Easy online tool for transforming CSS into Facebook React style JSON. Great for copy/pasting without the translation errors.">
+    <meta name="Description"
+          CONTENT="Easy online tool for transforming CSS into Facebook React style JSON. Great for copy/pasting without the translation errors.">
     <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../resources/stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../resources/stylesheets/github-dark.css" media="screen">
@@ -49,52 +50,72 @@
             -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
             animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
         }
+
         .sk-cube-grid .sk-cube1 {
             -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s; }
+            animation-delay: 0.2s;
+        }
+
         .sk-cube-grid .sk-cube2 {
             -webkit-animation-delay: 0.3s;
-            animation-delay: 0.3s; }
+            animation-delay: 0.3s;
+        }
+
         .sk-cube-grid .sk-cube3 {
             -webkit-animation-delay: 0.4s;
-            animation-delay: 0.4s; }
+            animation-delay: 0.4s;
+        }
+
         .sk-cube-grid .sk-cube4 {
             -webkit-animation-delay: 0.1s;
-            animation-delay: 0.1s; }
+            animation-delay: 0.1s;
+        }
+
         .sk-cube-grid .sk-cube5 {
             -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s; }
+            animation-delay: 0.2s;
+        }
+
         .sk-cube-grid .sk-cube6 {
             -webkit-animation-delay: 0.3s;
-            animation-delay: 0.3s; }
+            animation-delay: 0.3s;
+        }
+
         .sk-cube-grid .sk-cube7 {
             -webkit-animation-delay: 0s;
-            animation-delay: 0s; }
+            animation-delay: 0s;
+        }
+
         .sk-cube-grid .sk-cube8 {
             -webkit-animation-delay: 0.1s;
-            animation-delay: 0.1s; }
+            animation-delay: 0.1s;
+        }
+
         .sk-cube-grid .sk-cube9 {
             -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s; }
+            animation-delay: 0.2s;
+        }
 
         @-webkit-keyframes sk-cubeGridScaleDelay {
             0%, 70%, 100% {
                 -webkit-transform: scale3D(1, 1, 1);
                 transform: scale3D(1, 1, 1);
-            } 35% {
-                  -webkit-transform: scale3D(0, 0, 1);
-                  transform: scale3D(0, 0, 1);
-              }
+            }
+            35% {
+                -webkit-transform: scale3D(0, 0, 1);
+                transform: scale3D(0, 0, 1);
+            }
         }
 
         @keyframes sk-cubeGridScaleDelay {
             0%, 70%, 100% {
                 -webkit-transform: scale3D(1, 1, 1);
                 transform: scale3D(1, 1, 1);
-            } 35% {
-                  -webkit-transform: scale3D(0, 0, 1);
-                  transform: scale3D(0, 0, 1);
-              }
+            }
+            35% {
+                -webkit-transform: scale3D(0, 0, 1);
+                transform: scale3D(0, 0, 1);
+            }
         }
     </style>
 </head>
@@ -103,14 +124,18 @@
 <noscript>
     You need to enable JavaScript to run this app.
 </noscript>
-<a href="https://github.com/htbkoo/CssToAndFromReact" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+<a href="https://github.com/htbkoo/CssToAndFromReact" target="_blank"><img
+        style="position: absolute; top: 0; right: 0; border: 0;"
+        src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+        alt="Fork me on GitHub"
+        data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
 <div id="container">
 
     <div class="inner">
 
         <header style="text-align:center;">
-            <img src="../resources/images/CssToReact-logo.svg" />
+            <img src="../resources/images/CssToReact-logo.svg"/>
         </header>
 
         <div id="loader">
@@ -128,7 +153,8 @@
         </div>
 
         <p>
-            This simple little tool is intended to help translate plain  <code>CSS</code> into the <a href="https://facebook.github.io/react/tips/inline-styles.html">React in-line style</a> specific JSON
+            This simple little tool is intended to help translate plain <code>CSS</code> into the <a
+                href="https://facebook.github.io/react/tips/inline-styles.html">React in-line style</a> specific JSON
             representation. Making it easy to copy and paste into an inline
             React component.
         </p>
@@ -165,10 +191,17 @@
 <!-- provided, should skip comma expression check -->
 <!--suppress CommaExpressionJS -->
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-1017448-8', 'auto');
     ga('send', 'pageview');
