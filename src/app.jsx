@@ -106,12 +106,29 @@ export default class App extends React.Component {
       <div>
         <div style={{"textAlign":"right"}}>
           <button style={{"width": "70px"}} className="output-css-button copy-to-clipboard" data-clipboard-target="#outputCss">Copy to Clipboard</button>
-          <input style={{"marginLeft": "15px"}} ref="useNewline" alt="Formats the react JSON below." type="checkbox" onChange={this.update} />
+          <input
+              style={{"marginLeft": "15px"}}
+              aria-label="Format"
+              ref="useNewline"
+              alt="Formats the react JSON below."
+              type="checkbox"
+              onChange={this.update} />
           <span style={{"marginRight": "10px"}}>Format</span>
         </div>
         <div style={{"textAlign":"center"}}>
-          <Input ref='inputCss' placeholder="Type or paste CSS here..." style={inputCssStyle} onChange={this.inputTextUpdate} value={inputText} />
-          <textarea id="outputCss" ref='outputCss' style={outputCssStyle} value={outputText} />
+          <Input name="inputCss"
+              aria-label="Input CSS"
+              ref='inputCss'
+              placeholder="Type or paste CSS here..."
+              style={inputCssStyle}
+              onChange={this.inputTextUpdate}
+              value={inputText} />
+          <textarea id="outputCss"
+              aria-label="Output React JSON"
+              name="outputCss"
+              ref='outputCss'
+              style={outputCssStyle}
+              value={outputText} />
         </div>
       </div>
     );
