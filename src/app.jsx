@@ -14,7 +14,7 @@ class Input extends React.Component {
   }
 
   render() {
-    return <textarea cols="40" rows="20" {...this.props} value={undefined} />;
+    return <textarea {...this.props} value={undefined} />;
   }
 }
 
@@ -87,19 +87,32 @@ export default class App extends React.Component {
   }
 
   render() {
-    var outputCssStyle = this.state.error ? {
-      "backgroundColor": "lightcoral"
-    } : null;
+    const textAreaStyles = {
+      width: "48%",
+      height: "300px"
+    };
+    const outputCssStyle = { ...textAreaStyles };
+    const inputCssStyle = { ...textAreaStyles };
+
+    if (this.state.error) {
+      outputCssStyle.backgroundColor = "lightcoral";
+    }
+
     console.log('state', this.state);
     var inputText = this.state.inputText;
     var outputText = this.state.error || this.state.outputText;
 
     return (
-      <div style={{"textAlign":"center"}}>
-        <Input ref='inputCss' placeholder="Type or paste CSS here..." onChange={this.inputTextUpdate} value={inputText} />
-        <textarea ref='outputCss' cols="40" rows="20" style={outputCssStyle} value={outputText} />
-        <br />
-        <input style={{"marginLeft": "266px"}} ref="useNewline" type="checkbox" onChange={this.update} /> Format
+      <div>
+        <div style={{"textAlign":"right"}}>
+          <button style={{"width": "70px"}} className="output-css-button copy-to-clipboard" data-clipboard-target="#outputCss">Copy to Clipboard</button>
+          <input style={{"marginLeft": "15px"}} ref="useNewline" alt="Formats the react JSON below." type="checkbox" onChange={this.update} />
+          <span style={{"marginRight": "10px"}}>Format</span>
+        </div>
+        <div style={{"textAlign":"center"}}>
+          <Input ref='inputCss' placeholder="Type or paste CSS here..." style={inputCssStyle} onChange={this.inputTextUpdate} value={inputText} />
+          <textarea id="outputCss" ref='outputCss' style={outputCssStyle} value={outputText} />
+        </div>
       </div>
     );
   }
